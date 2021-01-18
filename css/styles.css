@@ -1,164 +1,238 @@
-body{
-    background-color: #141414;
+body {
+  background-color: #141414;
 }
 
-.login{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #100F0B;
-    margin: 0 auto;
-    width: 300px;
-    height: 580px;
-    border: solid 10px black;
-    border-radius: 40px;
-    overflow: hidden;
+.login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #100f0b;
+  margin: 0 auto;
+  width: 300px;
+  height: 580px;
+  border: solid 10px black;
+  border-radius: 40px;
+  overflow: hidden;
 }
 
-.login-header{
-    height: 180px;
-    width: 100%;
-    position: relative;
+.login-header {
+  height: 180px;
+  width: 100%;
+  position: relative;
 }
 
-.login-header .images>img{
-    width: 300px;
-    position: absolute;
-    left: 0px;
+.login-header .images > img {
+  width: 300px;
+  position: absolute;
+  left: 0px;
 }
 
-.login-header .images>img:nth-child(2){
-    transform: scale(4);
-    animation-delay: 3s;
-    animation-duration: 1s;
-    animation-name: imageHeader;
-    animation-fill-mode: forwards;
+.login-header .images > img:nth-child(2) {
+  transform: scale(4);
+  animation-delay: 3s;
+  animation-duration: 1s;
+  animation-name: imageHeader;
+  animation-fill-mode: forwards;
 }
 
-.login-body{
-    margin-top: 20px;        
-    font-family:Georgia, 'Times New Roman', Times, serif;
-    color: whitesmoke;
-    text-align: center;
+.login-body {
+  margin-top: 20px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: whitesmoke;
+  text-align: center;
 }
 
-.login-body--title{
-    margin-top: 40px;
-    animation-delay: 2s;
-    animation-duration: 1s;
-    animation-name: changeVisibility;
-    animation-fill-mode: forwards;
-    visibility: hidden;
+.login-body--title {
+  position: relative;
+  top: 0px;
+  opacity: 1;
+  margin-top: 40px;
+  animation-delay: 2s;
+  animation-duration: 1s;
+  animation-name: changeVisibility;
+  animation-fill-mode: forwards;
+  visibility: hidden;
 }
 
-.login-body>img{
-    position: relative;
+.login-body > img {
+  position: relative;
+  top: 0px;
+  width: 80px;
+  height: 40px;
+  animation-duration: 3s;
+  animation-name: zoomIn;
+  animation-fill-mode: forwards;
+  opacity: 1;
+  visibility: visible;
+}
+
+.login-body--title > p:nth-child(1) {
+  padding: 0px;
+  margin: 0px;
+  font-size: 18px;
+}
+
+.login-body--title > p:nth-child(2) {
+  padding: 0px;
+  margin: 0px;
+  font-size: 36px;
+}
+
+.login-body--title > p:nth-child(3) {
+  padding: 0px;
+  margin: 0px;
+  font-size: 10px;
+  color: grey;
+}
+
+.login-bottom {
+  margin-bottom: 40px;
+  position: relative;
+  top: 200px;
+  opacity: 1;
+  /* transition: all 1s; */
+  animation-delay: 3s;
+  animation-duration: 1s;
+  animation-name: inputsVisibility;
+  animation-fill-mode: forwards;
+}
+
+.login-bottom > div {
+  text-decoration: none;
+  color: black;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.login-bottom div > p {
+  background-color: #fde555;
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.login-bottom-2 {
+  display: none;
+}
+
+.hide-login-bottom {
+  animation: hideBottom 1s normal;
+}
+
+.hide-login-body--title {
+  animation: hideTitle 1s normal;
+}
+
+.hide-login-body {
+  animation: hideLogo 1s normal;
+}
+
+@keyframes hideLogo {
+  from {
+    opacity: 1;
     top: 0px;
-    width: 80px;
-    height: 40px;
-    animation-duration: 3s;
-    animation-name: zoomIn;
-    animation-fill-mode: forwards;
+    visibility: visible;
+  }
+
+  to {
+    opacity: 0;
+    top: 0px;
+    visibility: hidden;
+  }
 }
 
-.login-body--title>p:nth-child(1){
-    padding: 0px;
-    margin: 0px;
-    font-size: 18px;
+@keyframes hideTitle {
+  from {
+    opacity: 1;
+    top: 0px;
+    visibility: visible;
+  }
+
+  to {
+    opacity: 0;
+    top: 60px;
+    visibility: hidden;
+  }
 }
 
-.login-body--title>p:nth-child(2){
-    padding: 0px;
-    margin: 0px;
-    font-size: 36px;
-}
+@keyframes hideBottom {
+  0% {
+    opacity: 1;
+    top: 0px;
+  }
 
-.login-body--title>p:nth-child(3){
-    padding: 0px;
-    margin: 0px;
-    font-size: 10px;
-    color: grey;
-}
-
-.login-bottom{
-    margin-bottom: 40px;
-    position: relative;
+  100% {
+    opacity: 0;
     top: 200px;
-    animation-delay: 3s;
-    animation-duration: 1s;
-    animation-name: inputsVisibility;
-    animation-fill-mode: forwards;
-}
-
-.login-bottom>div{
-    text-decoration: none;
-    color: black;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-weight: bold;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    cursor: pointer;
-}
-
-.login-bottom div>p{
-    background-color:#FDE555;
-    padding-left: 100px;
-    padding-right: 100px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+  }
 }
 
 @keyframes imageHeader {
-    from {
-        transform: scale(4);
-    }
+  from {
+    transform: scale(4);
+  }
 
-    to {
-        transform: scale(1);
-    }
-    
+  to {
+    transform: scale(1);
+  }
 }
 
-@keyframes inputsVisibility{
-    from {
-        opacity: 0;
-        top: 200px;
-    }
+@keyframes hideInputs {
+  from {
+    opacity: 1;
+    top: 0px;
+  }
 
-    to {
-        opacity: 1;
-        top: 0px;
-    }
+  to {
+    opacity: 0;
+    top: 200px;
+  }
+}
+
+@keyframes inputsVisibility {
+  from {
+    opacity: 0;
+    top: 200px;
+  }
+
+  to {
+    opacity: 1;
+    top: 0px;
+  }
 }
 
 @keyframes changeVisibility {
-    from {
-        opacity: 0;
-        visibility: hidden;
-    }
+  from {
+    opacity: 0;
+    visibility: hidden;
+  }
 
-    to {
-        opacity: 1;
-        visibility: visible;
-    }
+  to {
+    opacity: 1;
+    visibility: visible;
+  }
 }
 
 @keyframes zoomIn {
-    0% {
-        transform: scale(20);
-    }
+  0% {
+    transform: scale(20);
+  }
 
-    33% {
-        top: 60px;
-        transform: scale(1);
-    }
+  33% {
+    top: 60px;
+    transform: scale(1);
+  }
 
-    66% {
-        top: 60px;
-    }
+  66% {
+    top: 60px;
+  }
 
-    100% {
-        top: 0px;
-    }
+  100% {
+    top: 0px;
+  }
 }
